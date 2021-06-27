@@ -13,11 +13,7 @@ SECRET_KEY = variables.SECRET_KEY
 
 DEBUG = bool(int(variables.DEBUG))
 
-ALLOWED_HOSTS = [
-    'geniusroom-rest-backend.herokuapp.com',
-    variables.CLIENT_URL,
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = variables.ALLOWED_HOSTS.split(' ')
 
 
 INSTALLED_APPS = [
