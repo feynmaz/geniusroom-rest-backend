@@ -1,12 +1,8 @@
-from django.shortcuts import get_object_or_404
-from django.db.models import Sum, Q, Subquery
-
 from rest_framework.decorators import api_view, authentication_classes
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_200_OK
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
-from rest_framework import mixins
 from rest_framework.pagination import PageNumberPagination
 
 from .models import *

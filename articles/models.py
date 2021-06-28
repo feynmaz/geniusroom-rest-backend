@@ -1,9 +1,7 @@
 from django.db import models
 from django.core import validators
-from django.contrib.postgres import fields
 
 from users.models import GrUser
-
 from .utils import resize_image, get_timestamp_path
 
 

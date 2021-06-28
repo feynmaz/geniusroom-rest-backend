@@ -3,8 +3,6 @@ from django.db.models import Sum
 from rest_framework import serializers
 from .models import *
 
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
 
 def get_rating_by_article_pk(pk):
     rating = Rating.objects.filter(article=pk).aggregate(
