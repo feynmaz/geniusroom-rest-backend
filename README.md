@@ -5,4 +5,4 @@
 
 Доступные get url
   - /api/v1/articles/ - список статей
-  - /api/v1/articles/<pk> - детальный обзор статьи
+  - /api/v1/articles/`<int:pk>` - детальный обзор статьи
