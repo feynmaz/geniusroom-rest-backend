@@ -5,7 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
 from rest_framework.pagination import PageNumberPagination
 
-from .models import *
+
+from .models import Article, Rubric, Rating
 from .serializers import *
 
 
@@ -58,16 +59,13 @@ class RubricView(generics.ListAPIView):
 @authentication_classes([IsAuthenticated])
 @api_view(http_method_names=['POST'])
 def create_comment(request, pk):
-    data = {
-        'content': request.data.get('content'),
-        'author': request.user.pk,
-        'article': pk
-    }
-    serializer = CommentSerializer(data=data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=HTTP_200_OK)
-    return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+    comment = Comment.objects.create(
+        article=get_object_or_404(Article, pk=pk),
+        author=get_object_or_404(GrUser, pk=request.user.pk),
+        content=request.data.get('content')
+    )
+    serializer = CommentSerializer(comment)
+    return Response(serializer.data, status=HTTP_200_OK)
 
 
 class RatingView(generics.UpdateAPIView):
