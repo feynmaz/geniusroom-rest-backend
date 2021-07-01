@@ -48,7 +48,7 @@ class ArticleDetailSerializer(serializers.ModelSerializer):
                   'source', 'created', 'image', 'rating', 'comments', 'ais')
 
     def get_comments(self, article):
-        comments = Comment.objects.filter(article=article.pk)
+        comments = Comment.objects.filter(article=article.pk, is_approved=True)
         comment_serializer = CommentSerializer(comments, many=True)
         return comment_serializer.data
 
