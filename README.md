@@ -1,8 +1,8 @@
 # geniusroom-rest-backend
-Продуктовая версия сайта geniusroom-rest для развертывания на Heroku
+prod version of backend of "geniusroom-rest" deployed on Heroku
 
-Работает: https://geniusroom-rest-backend.herokuapp.com/
+https://geniusroom-rest-backend.herokuapp.com/
 
-Доступные get url
-  - /api/v1/articles/ - список статей
-  - /api/v1/articles/`<int:pk>` - детальный обзор статьи
+Endpoints
+  - /api/v1/articles/ - list of articles
+  - /api/v1/articles/`<int:pk>` - detailed view of single article
