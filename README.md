@@ -1,5 +1,4 @@
 # geniusroom-rest-backend
-prod version of backend of "geniusroom-rest" deployed on Heroku
 
 https://geniusroom-rest-backend.herokuapp.com/
 
